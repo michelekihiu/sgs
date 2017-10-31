@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="Calculations">
+  <head>
+    <title>SGS Kenya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body>
+   <div class="container" ng-controller="CalculationsController">
+     <h1>Calculation for cargo</h1>
+
+         <div class="form-group">
+
+             <select name="typeOfShipment">
+                 <option name="breakBulkConsignments">Break bulk consignment</option>
+                 <option name="bulkConsignmentsQuayside">Bulk consignment if bagged on quayside (discharge/delivery)</option>
+                 <option name="bulkConsignmentsSilo">Bulk consignment using Silo Facilities (discharge/delivery)</option>
+                 <option name="containerizedConsignments">Containerized Cargo</option>
+             </select>
+
+             <input id="weightofShipment" type="text"
+             placeholder="Enter the weight of the shipment in metric tonnes"
+             class="form-control" ng-model="weight">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="calculate()">Calculate</button>
+         </div>
+         <div class="form-group message">
+           {{result}}
+         </div>
+   </div>
+   <script src="angular.min.js"></script>
+   <script src="app.js"></script>
+</body>
+</html>
